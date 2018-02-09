@@ -4,29 +4,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 //////////////////////////////////////////////////////////////////////////
-//This is the java code to implement the Apriori algorithm by Yibo Wang // 
 //////////////////////////////////////////////////////////////////////////
-
-/*	Questions:
-	1) Algorithm is really slow ... I know it works
-	2) how do I get it to return a text file?
-	3) 
-*/
+//             APRIORI ALGORITHM IMPLEMENTATION BY YIBO WANG            //              
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 
 public class Apriori {
 
 	public static List<int[]> database = new ArrayList<int[]>(); //List database stores the transaction database of itemsets
 	public static List<int[]> combination = new ArrayList<int[]>(); //List of int[] that stores all combinations
 	public static List<ArrayList<Integer>> arraylist = new ArrayList<ArrayList<Integer>>(); //List of int[] that stores all combinations
-	
-	public static HashMap<Set<Integer>, Integer> map = new HashMap<Set<Integer>, Integer>(); //HashMap stores the item set and frequency list
-	public static HashMap<int[], Integer> map2 = new HashMap<int[], Integer>();  //HashMap stores the item set and frequency list
-	public static HashMap<ArrayList<Integer>, Integer> map3 = new HashMap<ArrayList<Integer>, Integer>();  //HashMap stores the item set and frequency list
-	
+	public static HashMap<ArrayList<Integer>, Integer> map = new HashMap<ArrayList<Integer>, Integer>();  //HashMap stores the item set and frequency list
 	public static Set<Integer> distinctSet = new HashSet<Integer>(); //Set which stores the distinct elements in the database
-	//public static List<Integer> distinctSet1 = new ArrayList<Integer>(); //Set which stores the distinct elements in the database
-	
-	public static Set<Set<Integer>> powerSet = new HashSet<Set<Integer>>();
 	
 	//have to use infrequent item sets since searching the entire file takes a while. 
 	
@@ -39,7 +28,7 @@ public class Apriori {
 	
 	
 	// ================================================================================================= //
-    //                                    This is the main method                                        //
+    //                                          MAIN METHOD                                              //
     // ================================================================================================= //
 	public static void main(String[] args) throws FileNotFoundException
 	{
@@ -56,8 +45,6 @@ public class Apriori {
 		arr2.add(21);
 		arr2.add(1);
 		arr2.add(5);
-		
-		
 		//System.out.println("boolean " + isSubsetSet(arr1, arr2));
 	
 	}
@@ -79,10 +66,8 @@ public class Apriori {
 							distinctSet.add(newArray[j]);
 							
 						}
-					
 					}
 				}
-				
 				//System.out.println("set " + distinctSet.toString());
 				
 				int[] distinct = new int[distinctSet.size()];
@@ -142,7 +127,7 @@ public class Apriori {
 // ================================================================================================= //
 // This method creates a frequency item list by storing the list in a HashMap
 // ================================================================================================= //	
-	public static void supportCount(List<int[]> database, int supportCount){	
+	public static void supportCount(List<int[]> database, int supportCount){
 		
 		for(int j=0; j<arraylist.size(); j++){
 			ArrayList<Integer> combArray = arraylist.get(j); //IMPORTANT
@@ -157,13 +142,18 @@ public class Apriori {
 					}		
 				}
 			if (count >= supportCount){
-					map3.put(combArray, count);
+					map.put(combArray, count);
 			}
 		}
 		
-		for(Entry<ArrayList<Integer>, Integer> entry : map3.entrySet())
+		for(Entry<ArrayList<Integer>, Integer> entry : map.entrySet())
 		{
-			System.out.println(entry.getKey().toString() + " (" + entry.getValue() + ")");
+			ArrayList<Integer> list = entry.getKey();
+			for(int i =0; i <list.size(); i++){
+				System.out.print(list.get(i) + " ");
+			}
+			System.out.println(" (" + entry.getValue() + ")");
+			//System.out.println(entry.getKey().toString() + " (" + entry.getValue() + ")");
 		}
 	}
 	
@@ -201,18 +191,16 @@ public class Apriori {
 	public static List<ArrayList<Integer>> getPowerSetArrayList(int[] set)
 	{
 		int power_setSize = (int) Math.pow(2.0, set.length);//stores size of the power set of a set = 2^n
-	
+		//ArrayList<Integer> list = new ArrayList<Integer>();
+		
 		for(int counter = 0; counter < power_setSize; counter++)
 		{
 			ArrayList<Integer> list = new ArrayList<Integer>();
 			//System.out.print("[ ");
 			for(int j = 0; j < set.length; j++)
 			{
-				// (1<<j) is a number with jth bit 1
-                // so when we 'and' them with the
-                // subset number we get which numbers
-                // are present in the subset and which
-                // are not 
+				// (1<<j) is a number with jth bit 1 so when we 'and' them with the
+                // subset number it gets which numbers are present and which  are not 
                 if ((counter & (1 << j)) > 0)
                 {
                 	//System.out.print(set[j] +" ");
@@ -220,18 +208,20 @@ public class Apriori {
                 	list.add(currentInt);
                  }   
 			}
-			arraylist.add(list);
+			if(list.size() > 0){
+				arraylist.add(list);
+			}
 			//System.out.print("]");	
 		}
 		for(int i =0; i<arraylist.size(); i++){
 			ArrayList<Integer> array = arraylist.get(i);
 			for(int j=0; j<array.size(); j++){
 					//System.out.print(array.get(j));
+					
 			}
 			//System.out.println("");
 		}
 		
 		return arraylist;	
-	}
-		
+	}		
 }
