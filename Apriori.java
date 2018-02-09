@@ -35,14 +35,6 @@ public class Apriori {
 		
 		getPowerSetArrayList(distinct);
 		supportCount(database, 1);
-		
-		int[] arr1 = {11,1,13,21,3,7};
-		ArrayList<Integer> arr2 = new ArrayList<Integer>();
-		arr2.add(11);
-		arr2.add(21);
-		arr2.add(1);
-		arr2.add(5);
-		//System.out.println("boolean " + isSubsetSet(arr1, arr2));
 	
 	}
 	
