@@ -1,0 +1,8 @@
+These are linear regression graphs to plot the many factors in deciding whether a basektball team 
+would advance in the March Madness tournament such as - home wins, teams wins, free throws attempted, etc. 
+Overall, the most important factor in deciding whether a basektball team would advance in the 
+March Madness tournament was the point differential. 
+
+Point Differential is the numerical gap between points scored and points allowed. 
+Wins in close games tend not to reflect a team's true skill. 
+Teams that start the season with a better record than their point differential tend to slow down and vice versa.
