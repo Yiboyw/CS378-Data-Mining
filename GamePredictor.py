@@ -1,3 +1,4 @@
+##Game Predictor File written by Chris Tseng for CS378 Final Project Basketball Prediction Analysis
 ##Predictor gives head to head game results based off of regular season point differential in a specific year
 ##Input parameters: team1 team2 season
 ##Year must be between 2003 and 2017 (inclusive)
