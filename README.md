@@ -6,4 +6,4 @@ HW1 Apriori
 
 HW2 Naive Bayesian Classifier
 
-Python Code for Basketball Prediction Analysis Final Project
+Final Report, Linear Regression Graphs, and Python Code for Final Project Basketball Prediction Analysis. 
