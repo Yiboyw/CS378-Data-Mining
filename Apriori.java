@@ -154,7 +154,6 @@ public class Apriori {
 	
 	// ================================================================================================= //
 	// Checks to see if an series of numbers in a ArrayList<Integer> is a subset of an int[] array 
-	// https://www.geeksforgeeks.org/find-whether-an-array-is-subset-of-another-array-set-1/
 	// ================================================================================================= //	
 	public static boolean isSubsetSet(int[] arr1, ArrayList<Integer> arr2){
 	
