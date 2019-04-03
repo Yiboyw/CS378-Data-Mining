@@ -2,7 +2,7 @@
 Data Mining Files
 Files include:
 
-HW1 Apriori
+HW1 Apriori written by myself(Yibo) and fellow classmates Alex Smadja, Rohan Bansal, and Alvin Choi
 
 HW2 Naive Bayesian Classifier
 
