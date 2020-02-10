@@ -5,22 +5,19 @@ import matplotlib.pyplot as plt
 import sklearn
 import sys
 
-
+#Create a variable to store the .cvs file of the Kaggle dataset
 teamName = pd.read_csv("/Users/yibowang/Downloads/DataFiles/Teams.csv")
 
-teamData = pd.DataFrame(teamName) #stores into a data frame
+#Change the data set to a data frame
+teamData = pd.DataFrame(teamName) 
 
-#print(teamData) #prints Teams.csv file
-
+#Read the dataset
 tourneyResults= pd.read_csv("/Users/yibowang/Downloads/DataFiles/RegularSeasonCompactResults.csv")
 
-tourneyData = pd.DataFrame(tourneyResults) #stores into a data frame
+#Store into a data frame
+tourneyData = pd.DataFrame(tourneyResults) 
 
 tourneyData = tourneyData[tourneyData.Season == 2017]
-
-#print ('shape', tourneyData.shape)
-
-#print(tourneyData) #prints NCAATourneyCompactResults.csv
 
 results = pd.read_csv("/Users/yibowang/Downloads/DataFiles/NCAATourneySeeds.csv")
 
