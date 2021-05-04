@@ -1,4 +1,4 @@
-# Code written by a fellow former Emory CS student - ALEX SMADJA
+# Code written by a former Emory CS student - ALEX SMADJA
 # THIS CODE IS MY OWN WORK, IT WAS WRITTEN WITHOUT CONSULTING A TUTOR OR CODE WRITTEN BY OTHER STUDENTS - ALEX SMADJA
 import sys
 import time
